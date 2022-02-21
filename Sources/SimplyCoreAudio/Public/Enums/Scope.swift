@@ -42,8 +42,8 @@ public enum Scope {
 
 // MARK: - Internal Functions
 
-extension Scope {
-    var asPropertyScope: AudioObjectPropertyScope {
+public extension Scope {
+    public var asPropertyScope: AudioObjectPropertyScope {
         switch self {
         case .global: return kAudioObjectPropertyScopeGlobal
         case .input: return kAudioObjectPropertyScopeInput
@@ -54,7 +54,7 @@ extension Scope {
         }
     }
 
-    static func from(_ scope: AudioObjectPropertyScope) -> Scope {
+    public static func from(_ scope: AudioObjectPropertyScope) -> Scope {
         switch scope {
         case kAudioObjectPropertyScopeGlobal: return .global
         case kAudioObjectPropertyScopeInput: return .input
